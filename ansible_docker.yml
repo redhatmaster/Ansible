@@ -1,0 +1,15 @@
+---
+  - hosts: [localhost]
+    tasks:
+     - pip:
+        name: docker-py
+     - name: start docker
+       shell: systemctl start docker
+     - name: docker-container using Ansible
+       docker:
+         name: websphere-liberty
+         image: websphere-liberty
+         state: present #started,stopped,absent
+         expose:
+           - "9080:9080"
+...
