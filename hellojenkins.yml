@@ -1,0 +1,6 @@
+---
+  hosts: [localhost]
+  tasks:
+    - name: welcome message
+      debug: msg="Hello from jenkins-Ansible"
+...      
