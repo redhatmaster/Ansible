@@ -93,13 +93,19 @@
       blockinfile:
         path: /opt/tomcat/apache-tomcat-9.0.1/conf/tomcat-users.xml
         block: |
-          <role rolename="manager-gui"/>
-          <role rolename="manager-script"/>
-          <role rolename="manager-jmx"/>
-          <role rolename="manager-status"/>
-          <role rolename="admin-gui"/>
-          <role rolename="admin-script"/>
-          <user username="redhatmaster" password="devops1" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui,admin-script"/>
+          <tomcat-users xmlns="http://tomcat.apache.org/xml"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
+              version="1.0">
+           <role rolename="manager-gui"/>
+           <role rolename="manager-script"/>
+           <role rolename="manager-jmx"/>
+           <role rolename="manager-status"/>
+           <role rolename="admin-gui"/>
+           <role rolename="admin-script"/>
+           <user username="redhatmaster" password="devops1" roles="manager-gui,manager-script,manager-jmx,manager-status,
+           admin-gui,admin-script"/>
+          </tomcat-users>
     - name: rum tomcat startup script
       shell: sh /opt/tomcat/apache-tomcat-9.0.1/bin/startup.sh
       msg: "Congrates Tomcat has been setup .. verify at localhost:8080"
