@@ -9,7 +9,7 @@
        docker:
          name: websphere-liberty
          image: websphere-liberty
-         state: present #started,stopped,absent
+         state: started #present,stopped,absent
          expose:
            - "9080:9080"
 ...
