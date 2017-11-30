@@ -4,4 +4,4 @@ Install tomcat - Configure tomcatusers.xml for jenkins manager app
 create new job - free style in jenkins
                - pull code from SCM if required
                - invoke ansible playbook -- provide path 
-Ansible play book for docker is in Ansible repository
+Ansible play book for docker is in Ansible repositor : ansible_docker.yml
