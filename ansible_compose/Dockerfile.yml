@@ -1,0 +1,5 @@
+FROM webspere-liberty
+MAINTAINER pallavi vissa.pallavi@gmail.com
+WORKDIR /opt/ibm/wlp/usr/servers/defaultServer/dropins
+ADD hello .
+RUN touch hai

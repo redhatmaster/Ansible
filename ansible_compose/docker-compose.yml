@@ -1,0 +1,10 @@
+version: '2'
+services:
+  webspere container:
+    build: .
+    ports: 9080:9080
+
+  reddis container:
+    image: reddis
+    ports:
+      - "9081:9081"

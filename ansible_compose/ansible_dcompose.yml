@@ -1,0 +1,15 @@
+---
+  - hosts: [localhost]
+    tasks:
+      # docker_service needs ansible-python3 , if below doesnt work
+      # try to install ansible-python3 from web
+      - name: install pre-requisites
+        pip:
+          name: ansible-python3
+          state: present
+      - name: ansible to run docker compose
+        docker_service:
+          project_src: /root/ansible_compose
+          state: present
+          debug: yes
+...
