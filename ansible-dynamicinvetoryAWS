@@ -1,0 +1,16 @@
+AWS
+---------------------------
+1.Create aws ec2 instance
+2.Make sure SSH with empty phassphrase is configured, Agent is started , Key is added to ssh-agent.
+3.Check connection from local to aws using example provided on aws instance connection.
+
+Local
+---------------------------
+1.pip install boto
+2.copy ssh keys - id_rsa.pub to authorized_keys under .ssh in both master and node
+3.update /etc/ansible/hosts file as : ec2-instance ansible_host=<<ec2-instance-ip>> ansible_user=ec2-user ansible_ssh_private_key_file=/location/of/the/keypair/your-key.pem
+4. check connection using : ansible -m ping all
+5. write a sample playbook to install finger command.
+6. run ansible playbook.
+
+
