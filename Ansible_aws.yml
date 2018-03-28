@@ -18,6 +18,7 @@
         region: "{{ region }}"
         aws_access_key: AKIAJSHLO5A4R3K5GREA
         aws_secret_key: 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
+        count: 1
       register: ec2
     - name: print all ec2 variables
       debug: var=ec2
